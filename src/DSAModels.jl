@@ -5,7 +5,7 @@ export AbstractShockAccelerationEfficiency,
     # efficiency models
     Kang07, KR13, CS14, Ryu19, P16,
     # mach nummber dependent efficiency 
-    η_Ms,
+    η_Ms, η_Ms_acc, η_Ms_reacc,
     # B-field dependent efficiency
     η_B,
     ηB_acc_e, ηB_acc_p, ηB_reacc_e, ηB_reacc_p
