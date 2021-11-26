@@ -64,7 +64,11 @@ function η_Ms(η_model::AbstractShockAccelerationEfficiency, M::T, X_cr::T) whe
     if η_tot > η_model.η_max
         return η_model.η_max
     else
-        return η_tot
+        if η_tot < 0
+            return T(0)
+        else
+            return η_tot
+        end
     end
 
 end
