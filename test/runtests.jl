@@ -20,12 +20,17 @@ end
             N_mach, M, η, η_r = read_dsa_data("Kang07.dat")
 
             @testset "η" begin
+
+                @test η_Ms(η_model, 0.5, 0.0) == 0.0
+
                 for i = 1:N_mach
                     @test η_Ms(η_model, M[i], 0.0) ≈ η[i]
                 end
             end
 
             @testset "η_r" begin
+                @test η_Ms(η_model, 0.5, 1.0) == 0.0
+
                 for i = 1:N_mach
                     @test η_Ms(η_model, M[i], 1.0) ≈ η_r[i]
                 end
