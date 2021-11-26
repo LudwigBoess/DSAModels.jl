@@ -1,0 +1,4 @@
+name = "DSAModels"
+uuid = "c94b82ce-bc6a-4c64-9fc0-cb2d7d683713"
+authors = ["LudwigBoess <lboess@usm.lmu.de>"]
+version = "0.1.0"
