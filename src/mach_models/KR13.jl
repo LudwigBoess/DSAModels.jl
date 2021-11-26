@@ -1,17 +1,17 @@
 """
-    KR13(X::T=0.05, η_max::T=0.0348) where T
+    KR13(X_cr::T=0.05, η_max::T=0.0348) where T
 
-Default values for efficiency model by Kang&Ryu 2013: ApJ, 764, 95.
+Efficiency model by Kang&Ryu 2013: ApJ, 764, 95.
 
 ## Values 
-- `X`: P_cr / P_th defined in model for re-acceleration. Basis for interpolation between acceleration and re-acceleration efficiency.
+- `X_cr`: P_cr / P_th defined in model for re-acceleration. Basis for interpolation between acceleration and re-acceleration efficiency.
 - `η_max`: Maximum efficiency defined in the model
 """
 struct KR13{T} <: AbstractShockAccelerationEfficiency
-    X::T
+    X_cr::T
     η_max::T
 
-    KR13(X::T = 0.05, η_max::T = 0.2055) where {T} = new{T}(X, η_max)
+    KR13(X_cr::T = 0.05, η_max::T = 0.2055) where {T} = new{T}(X_cr, η_max)
 end
 
 

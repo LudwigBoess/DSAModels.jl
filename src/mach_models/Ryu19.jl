@@ -1,17 +1,17 @@
 """
-        Ryu19(X::T=0.05, η_max::T=0.0348) where T 
+        Ryu19(X_cr::T=0.05, η_max::T=0.0348) where T 
 
-Default values for efficiency model by Ryu et al. 2019: https://arxiv.org/pdf/1905.04476v2.pdf.
+Efficiency model by Ryu et al. 2019: https://arxiv.org/pdf/1905.04476v2.pdf.
 
 ## Values 
-- `X`: P_cr / P_th defined in model for re-acceleration. Basis for interpolation between acceleration and re-acceleration efficiency.
+- `X_cr`: P_cr / P_th defined in model for re-acceleration. Basis for interpolation between acceleration and re-acceleration efficiency.
 - `η_max`: Maximum efficiency defined in the model
 """
 struct Ryu19{T} <: AbstractShockAccelerationEfficiency
-    X::T
+    X_cr::T
     η_max::T
 
-    Ryu19(X::T = 0.05, η_max::T = 0.0348) where {T} = new{T}(X, η_max)
+    Ryu19(X_cr::T = 0.05, η_max::T = 0.0348) where {T} = new{T}(X_cr, η_max)
 end
 
 

@@ -1,17 +1,17 @@
 """
-        CS14(X::T=0.05, η_max::T=0.5*0.2055) where T
+        CS14(X_cr::T=0.05, η_max::T=0.5*0.2055) where T
 
-Default values for Caprioli&Spitkovsky 2014 efficiency.
+Efficiency model by Caprioli&Spitkovsky 2014 efficiency.
 
 ## Values 
-- `X`: P_cr / P_th defined in model for re-acceleration. Basis for interpolation between acceleration and re-acceleration efficiency.
+- `X_cr`: P_cr / P_th defined in model for re-acceleration. Basis for interpolation between acceleration and re-acceleration efficiency.
 - `η_max`: Maximum efficiency defined in the model
 """
 struct CS14{T} <: AbstractShockAccelerationEfficiency
-    X::T
+    X_cr::T
     η_max::T
 
-    CS14(X::T = 0.05, η_max::T = 0.5 * 0.2055) where {T} = new{T}(X, η_max)
+    CS14(X_cr::T = 0.05, η_max::T = 0.5 * 0.2055) where {T} = new{T}(X_cr, η_max)
 end
 
 """

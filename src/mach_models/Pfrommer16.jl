@@ -1,13 +1,13 @@
 """
-        P16(X::T=0.05, η_max::T=0.5) where T
+        P16(X_cr::T=0.05, η_max::T=0.5) where T
 
-Default values for constant efficiency as in Pfrommer+ 2016, doi: 10.1093/mnras/stw2941 
+Constant efficiency as in Pfrommer+ 2016, doi: 10.1093/mnras/stw2941 
 """
 struct P16{T} <: AbstractShockAccelerationEfficiency
-    X::T
+    X_cr::T
     η_max::T
 
-    P16(X::T = 0.05, η_max::T = 0.5) where {T} = new{T}(X, η_max)
+    P16(X_cr::T = 0.05, η_max::T = 0.5) where {T} = new{T}(X_cr, η_max)
 end
 
 

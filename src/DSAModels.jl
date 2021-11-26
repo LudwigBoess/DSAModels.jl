@@ -38,15 +38,15 @@ Helper function to use the fitting function from KR07.
 end
 
 """
-    η_Ms(η_model::AbstractShockAccelerationEfficiency, M::T, X::T) where {T<:Real}
+    η_Ms(η_model::AbstractShockAccelerationEfficiency, M::T, X_cr::T) where {T<:Real}
 
 Calculates the sonic Mach Number dependent η_model as a linear interpolation between acceleration and reacceleration.
 """
-function η_Ms(η_model::AbstractShockAccelerationEfficiency, M::T, X::T) where {T<:Real}
+function η_Ms(η_model::AbstractShockAccelerationEfficiency, M::T, X_cr::T) where {T<:Real}
 
     # check if pressure ratio is greater than the target ratio
-    if X > η_model.X
-        X = η_model.X
+    if X_cr > η_model.X_cr
+        X_cr = η_model.X_cr
     end
 
     # initial acceleration
@@ -55,10 +55,10 @@ function η_Ms(η_model::AbstractShockAccelerationEfficiency, M::T, X::T) where 
 
     # reacceleration
     η2 = η_Ms_reacc(η_model, M)
-    X2 = η_model.X
+    X2 = η_model.X_cr
 
     # linear interpolation between the two cases:
-    η_tot::T = η1 + (X - X1) * (η2 - η1) / (X2 - X1)
+    η_tot::T = η1 + (X_cr - X1) * (η2 - η1) / (X2 - X1)
 
     # check if η_tot is smaller than the maximum η_model
     if η_tot > η_model.η_max
