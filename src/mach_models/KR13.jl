@@ -20,13 +20,13 @@ end
 
 Efficiency model from Kang&Ryu 2013, doi:10.1088/0004-637X/764/1/95
 """
-function η_Ms_acc(η_model::KR13, M::T) where {T}
+function η_Ms_acc(η_model::KR13, M::Real)
 
-    if M < 2.0
+    if M < 2
         return 0.0
-    elseif 2.0 <= M <= 5.0
+    elseif 2 <= M <= 5
         return -0.0005950569221922047 + 1.880258286365841e-5 * M^5.334076006529829
-    elseif 5.0 < M <= 15.0
+    elseif 5 < M <= 15
         return kr_fitting_function(M, -2.8696966498579606, 9.667563166507879,
             -8.877138312318019, 1.938386688261113, 0.1806112438315771)
     else
@@ -39,9 +39,9 @@ end
 
 Efficiency model from Kang&Ryu 2013, doi:10.1088/0004-637X/764/1/95
 """
-function η_Ms_reacc(η_model::KR13, M::T) where {T}
+function η_Ms_reacc(η_model::KR13, M::Real)
 
-    if M < 2.0
+    if M < 2
         return 0.0
     elseif M <= 17.7
         return kr_fitting_function(M, -0.722, 2.7307, -3.2854, 1.3428, 0.1901)
