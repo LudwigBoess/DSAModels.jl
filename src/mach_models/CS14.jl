@@ -1,4 +1,14 @@
 """
+
+Taken from Vazza et. al. (2016): doi:10.1093/mnras/stw584
+
+They assume Caprioli+Spitkovsky (2014) efficiency is roughly half of Kang&Ryu (2013)
+
+We account for angle dependent efficiency independently.
+"""
+const vazza_factor = 1//2
+
+"""
         CS14(X_cr::T=0.05, η_max::T=0.5*0.2055) where T
 
 Efficiency model by Caprioli&Spitkovsky 2014 efficiency.
@@ -18,10 +28,9 @@ end
     η_Ms_acc(η_model::CS14, M::T) where T
 
 Efficiency from Caprioli&Spitkovsky 2015, doi: 10.1088/0004-637x/783/2/91
-Same simplified approach as Vazza+12 -> is roughly half the efficiency of Kang&Ryu 2013.
+Same simplified approach as Vazza+16 -> is roughly half the efficiency of Kang&Ryu 2013.
 """
-function η_Ms_acc(η_model::CS14, M::T) where {T}
-    vazza_factor = 0.5
+function η_Ms_acc(η_model::CS14, M::Real)
     return vazza_factor * η_Ms_acc(KR13(), M)
 end
 
@@ -29,9 +38,8 @@ end
     η_Ms_reacc(η_model::CS14, M::T) where T
 
 Efficiency from Caprioli&Spitkovsky 2015, doi: 10.1088/0004-637x/783/2/91
-Same simplified approach as Vazza+12 -> is roughly half the efficiency of Kang&Ryu 2013.
+Same simplified approach as Vazza+16 -> is roughly half the efficiency of Kang&Ryu 2013.
 """
-function η_Ms_reacc(η_model::CS14, M::T) where {T}
-    vazza_factor = 0.5
+function η_Ms_reacc(η_model::CS14, M::Real)
     return vazza_factor * η_Ms_reacc(KR13(), M)
 end

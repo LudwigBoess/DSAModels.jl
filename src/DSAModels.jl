@@ -81,6 +81,6 @@ include("mach_models/CS14.jl")
 include("mach_models/Ryu19.jl")
 include("mach_models/Pfrommer16.jl")
 
-include("B_models/dubios.jl")
+include("B_models/pais.jl")
 
 end # module
