@@ -12,6 +12,6 @@ makedocs(
 # for more information.
 
 deploydocs(
-    repo = "https://github.com/LudwigBoess/DSAModels.jl",
+    repo = "github.com/LudwigBoess/DSAModels.jl.git",
     devbranch = "main"
 )
