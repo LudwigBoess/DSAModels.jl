@@ -4,7 +4,7 @@
 
 # DSAModels.jl
 
-This package provides a number of efficiency models for Diffuse Shock Acceleration (DSA). If you use this implementation for publications, please cite [Böss et. al. (submitted)](https://arxiv.org/abs/2207.05087).
+This package provides a number of efficiency models for Diffuse Shock Acceleration (DSA). If you use this implementation for publications, please cite [Böss et. al. (submitted)](https://ui.adsabs.harvard.edu/abs/2022arXiv220705087B/abstract).
 
 # Install
 
