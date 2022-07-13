@@ -8,6 +8,7 @@ end
 # DSAModels.jl
 
 This package provides a number of efficiency models for Diffuse Shock Acceleration (DSA). It provides a number of functions to calculate what fraction of the energy dissipated at a shock is used to accelerate Cosmic Rays (CRs).
+If you use this implementation in a publication please cite [Böss et. al. (submitted)](https://ui.adsabs.harvard.edu/abs/2022arXiv220705087B/abstract).
 
 # Install
 
