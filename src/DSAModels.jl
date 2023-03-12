@@ -83,4 +83,30 @@ include("mach_models/Pfrommer16.jl")
 
 include("B_models/pais.jl")
 
+using SnoopPrecompile    # this is a small dependency
+
+@precompile_setup begin
+    # Putting some things in `setup` can reduce the size of the
+    # precompile file and potentially make loading faster.
+    η_models = [Kang07(), KR13(), CS14(), Ryu19()]
+
+    @precompile_all_calls begin
+        # all calls in this block will be precompiled, regardless of whether
+        # they belong to your package or not (on Julia 1.8 and higher)
+
+        for η ∈ η_models
+            for M ∈ [1.0, 1.5, 3.0, 10.0]
+                η_Ms_acc(η, M)
+                η_Ms_reacc(η, M)
+            end
+        end
+
+        ηB_acc_p(1.0)
+        ηB_reacc_p(1.0)
+        ηB_acc_e(1.0)
+        ηB_reacc_e(1.0)
+    end
+end
+
+
 end # module
