@@ -94,10 +94,16 @@ using PrecompileTools    # this is a small dependency
         # all calls in this block will be precompiled, regardless of whether
         # they belong to your package or not (on Julia 1.8 and higher)
 
+        # loop over models
         for η ∈ η_models
+            # loop over Mach numbers
             for M ∈ [1.0, 1.5, 3.0, 10.0]
                 η_Ms_acc(η, M)
                 η_Ms_reacc(η, M)
+                # loop over seed populations
+                for Xcr ∈ [0.0, 0.05]
+                    η_Ms(η, M, Xcr)
+                end
             end
         end
 
