@@ -11,7 +11,7 @@ This package provides a number of efficiency models for Diffusive Shock Accelera
 As usual with Julia just run
 
 ```
-] add https://github.com/LudwigBoess/DSAModels.jl
+] add DSAModels
 ```
 
 # Usage
