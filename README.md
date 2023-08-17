@@ -2,6 +2,12 @@
 |:-----------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:| :-----------------------------------------------------------------------------------------------:|:-----------:|
 [![](https://img.shields.io/badge/docs-stable-blue.svg)](https://LudwigBoess.github.io/DSAModels.jl/stable) [![](https://img.shields.io/badge/docs-dev-blue.svg)](https://LudwigBoess.github.io/DSAModels.jl/dev) | [![Build Status](https://github.com/LudwigBoess/DSAModels.jl/actions/workflows/jlpkgbutler-ci-master-workflow.yml/badge.svg)](https://github.com/LudwigBoess/DSAModels.jl/actions/workflows/jlpkgbutler-ci-master-workflow.yml) [![codecov.io](https://codecov.io/gh/LudwigBoess/DSAModels.jl/coverage.svg?branch=main)](https://codecov.io/gh/LudwigBoess/DSAModels.jl?branch=main) | [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE.md) | [![DOI](https://zenodo.org/badge/432138387.svg)](https://zenodo.org/badge/latestdoi/432138387) |
 
+
+# Package Development
+
+> :warning: **This package is being discontinued, as it can't be registered in the General registry due to its name. Development has been moved to [DiffusiveShockAccelerationModels.jl](https://github.com/LudwigBoess/DiffusiveShockAccelerationModels.jl)**
+
+
 # DSAModels.jl
 
 This package provides a number of efficiency models for Diffusive Shock Acceleration (DSA). If you use this implementation for publications, please cite [Böss et. al. (2023)](https://ui.adsabs.harvard.edu/abs/2023MNRAS.519..548B/abstract).
@@ -11,7 +17,7 @@ This package provides a number of efficiency models for Diffusive Shock Accelera
 As usual with Julia just run
 
 ```
-] add DSAModels
+] add https://github.com/LudwigBoess/DSAModels.jl
 ```
 
 # Usage
